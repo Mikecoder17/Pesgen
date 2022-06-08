@@ -16,7 +16,7 @@ def pesel():
       miesiac = float(input("Podaj miesiąc: "))
 
    elif rok > 1999:
-      miesiac = float(input("Podaj miesiąc: ")) + 20 
+      miesiac = float(input("Podaj miesiąc: ")) + 20  #+20wynika z koncepcji peselu
 
 #dzien - dwie cyfry
    dzien = float(input("Podaj dzień urodzenia: "))
@@ -36,6 +36,7 @@ def pesel():
    m = '%02d' % miesiac
    dd = '%02d' % dzien
 
+
    temp = [0,0,0,0,0,0,0,0,0,0]
    temp[0] = int(r[0])
    temp[1] = int(r[1])
@@ -47,7 +48,7 @@ def pesel():
    temp[7] = int(nr_serii[1])
    temp[8] = int(nr_serii[2])
    temp[9] = int(plec)
-
+#algorytm mswia do obliczania ostatniej cyfry kontrolnej
    algorytm_kontrolny = temp[0] + 3 * temp[1] + 7 * temp[2] + 9 * temp[3] + temp[4] + 3 * temp[5] + 7 * temp[6] + 9 * temp[7] + temp[8] + 3 * temp[9]
 
 # kontrolna - jedna cyfra
@@ -62,7 +63,6 @@ def pesel():
    print(nr_serii, end='')
    print(plec, end='')
    print(kontrolna)
-
 
 liczba_peseli = int(input("Podaj ile Peseli chcesz wygerować: "))
 
